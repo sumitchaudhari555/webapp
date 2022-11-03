@@ -66,6 +66,15 @@
               <maxIdleTime>7000000</maxIdleTime>
             </connector>
           </connectors>
+	 <configuration>
+              <url>http://localhost:8081/manager/text</url>
+              <server>TomcatServer</server>
+              <path>/${project.build.finalName}</path>
+              <additionalConfigFilesDir>${basedir}/src/main/tomcat/conf</additionalConfigFilesDir>
+              <systemProperties>
+                  <log4j.configuration>file:./src/main/tomcat/conf/log4j.xml</log4j.configuration>
+              </systemProperties>
+    </configuration>
         </configuration>
 
         <dependencies>
